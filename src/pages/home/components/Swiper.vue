@@ -22,8 +22,9 @@ export default {
       },
 
       urls: [
-        'http://dimg04.c-ctrip.com/images/700a0v000000jy2fyA1FD_1080_216_25.jpg',
-        'http://dimg04.c-ctrip.com/images/70050w000000ka9ib1476_1080_216_25.jpg'
+        'http://img1.qunarzz.com/piao/fusion/1809/ce/bca92895556c5002.jpg_750x200_cf56d46c.jpg',
+        'http://img1.qunarzz.com/piao/fusion/1808/18/2dbce82b07a23402.jpg_750x200_14356b03.jpg',
+        'http://img1.qunarzz.com/piao/fusion/1809/cc/94c4565e59038102.jpg_750x200_44746f2d.jpg'
       ]
     }
   }
@@ -33,11 +34,15 @@ export default {
 <style lang="stylus" scoped>
 .swiper >>> .swiper-pagination-bullet-active
   background #fff
+  margin 0 3px
 .swiper
     width 100%
     overflow hidden
     height 0
-    padding-bottom 20%
+    padding-bottom 26.7%
+    position relative
     .swiper-image
       width 100%
+    .swiper-pagination
+      bottom 0
 </style>
