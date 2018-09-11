@@ -16,5 +16,17 @@ module.exports = {
         path.resolve(__dirname, './src/assets/styles/mixins.styl')
       ]
     }
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080', // target host
+          changeOrigin: true, // needed for virtual hosted sites
+          ws: true, // proxy websockets
+          pathRewrite: {
+            '^/api': '/data', // rewrite path
+          }
+      }
+    }
   }
 }
