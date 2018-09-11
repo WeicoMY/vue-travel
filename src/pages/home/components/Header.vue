@@ -19,23 +19,26 @@ export default {
 
 <style lang="stylus" scoped>
 .header
-  height rem2(86)
+  height $headerHeight
   display flex
   justify-content space-between
   background $bgColor
   font-size rem2(28)
-  line-height @height
-  color #fff
+  line-height $headerHeight
+  color $headerColor
   .header-left
     width rem2(64)
     text-align center
+    .icon-back
+      line-height $headerHeight
+      font-size rem2(32)
+      font-weight 700
+      color #fff
   .router-link
-    color #fff
+    color $headerColor
     .header-right
       width rem2(124)
       text-align center
-      ::after
-        vertical-align -1px
   .header-input
     flex 1
     height rem2(64)

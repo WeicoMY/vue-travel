@@ -1,12 +1,15 @@
 <template>
   <div class="city">
-    I am city section
+    <city-header></city-header>
   </div>
 </template>
 
 <script>
+import CityHeader from './components/Header'
 export default {
-  
+  components: {
+    CityHeader
+  }
 }
 </script>
 
