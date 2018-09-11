@@ -1,9 +1,9 @@
 <template>
 <div class="swiper">
-  <swiper :options="swiperOption">
+  <swiper :options="swiperOption" v-if="showSwiper">
     <!-- slides -->
-    <swiper-slide v-for="url of urls" :key="url">
-      <img :src="url" alt="swiper-images" class="swiper-image">
+    <swiper-slide v-for="(item, index) of swiperList" :key="item.imgUrl + index">
+      <img :src="item.imgUrl" alt="swiper images" class="swiper-image">
     </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
@@ -19,13 +19,13 @@ export default {
         pagination: '.swiper-pagination',
         loop: true,
         autoplay: 3000
-      },
-
-      urls: [
-        'http://img1.qunarzz.com/piao/fusion/1809/ce/bca92895556c5002.jpg_750x200_cf56d46c.jpg',
-        'http://img1.qunarzz.com/piao/fusion/1808/18/2dbce82b07a23402.jpg_750x200_14356b03.jpg',
-        'http://img1.qunarzz.com/piao/fusion/1809/cc/94c4565e59038102.jpg_750x200_44746f2d.jpg'
-      ]
+      }
+    }
+  },
+  props: ['swiperList'],
+  computed: {
+    showSwiper () {
+      return this.swiperList.length
     }
   }
 }

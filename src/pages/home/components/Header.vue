@@ -2,20 +2,18 @@
   <div class="header">
     <div class="header-left"><span class="iconfont icon-back"></span></div>
     <div class="header-input"><span class="iconfont icon-search"></span>输入城市/景点/游玩主题</div>
-    <div class="header-right"><span class="iconfont icon-morecity">北京</span></div>
+    <div class="header-right"><span class="iconfont icon-morecity">{{city}}</span></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Homeheader'
+  name: 'Homeheader',
+  props: [ 'city' ]
 }
 </script>
 
 <style lang="stylus" scoped>
-// @import '~styles/variables.styl'
-// @import '~styles/mixins.styl'
-
 .header
   height rem2(86)
   display flex

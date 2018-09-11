@@ -4,7 +4,7 @@
       <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png">猜你喜欢
     </div>
     <div class="home-recommend-list">
-      <div class="item border-bottom" v-for="(item, index) of recommendation" :key="index + item.imgUrl">
+      <div class="item border-bottom" v-for="(item, index) of recommendList" :key="index + item.imgUrl">
         <div class="item-img">
           <img :src="item.imgUrl" alt="">
         </div>
@@ -31,39 +31,13 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendation: [
-        {
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg',
-          title:  '长隆野生动物世界',
-          commentNum: 777642,
-          price: 218,
-          location: '长隆野生动物世界'
-        },
-        {
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/47/477416df92210439a3.img.jpg_200x200_b9e4ac2c.jpg',
-          title:  '广州长隆欢乐世界',
-          commentNum: 23431,
-          price: 200,
-          location: '广州长隆欢乐世界'
-        },
-        {
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/9e/7b5e0a44cb0310280b1aeb2a8dd94de8.water.jpg_200x200_3c429960.jpg',
-          title:  '长隆国际大马戏剧院',
-          commentNum: 321543,
-          price: 199,
-          location: '广州长隆大马戏剧院'
-        },
-      ]
-    }
-  }
+  props: [ 'recommendList' ]
 }
 </script>
 
 <style lang="stylus" scoped>
   .home-recommend
-    margin-top 10px
+    margin-top rem2(20)
     background #fff
     .home-recommend-title
       line-height rem2(44)

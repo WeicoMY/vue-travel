@@ -4,7 +4,7 @@
       <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png">周末去哪儿
     </div>
     <div class="home-weekend-list">
-      <div class="item" v-for="(item, index) of weekend" :key="index + item.imgUrl">
+      <div class="item" v-for="(item, index) of weekendList" :key="index + item.imgUrl">
         <div class="item-img">
           <img :src="item.imgUrl" alt="">
         </div>
@@ -40,7 +40,8 @@ export default {
         },
       ]
     }
-  }
+  },
+  props: [ 'weekendList' ]
 }
 </script>
 

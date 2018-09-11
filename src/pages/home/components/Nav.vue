@@ -1,12 +1,12 @@
 <template>
   <div class="home-nav">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="(page, index) of pages" :key="index">
-        <div class="home-nav-icon" v-for="icon of page" :key="icon.url">
+      <swiper-slide v-for="(page, index) of pages" :key="'page' + index">
+        <div class="home-nav-icon" v-for="icon of page" :key="icon.imgUrl + icon.id">
           <div class="icon-box">
-            <img :src="icon.url" :alt="icon.label">
+            <img :src="icon.imgUrl" :alt="icon.desc">
           </div>
-          <p class="icon-label">{{icon.label}}</p>
+          <p class="icon-label">{{icon.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -18,26 +18,14 @@ export default {
   name: 'HomeIcon',
   data () {
     return {
-      icons: [
-        { url: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png', label: '景点门票' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png', label: '游乐园' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1803/8c/47630407f70e8302.png', label: '国艺影视城' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png', label: '佛山必游' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png', label: '水上乐园' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1804/95/8d02011d149bdb02.png', label: '汽车票' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png', label: '一日游' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png', label: '玩转长隆' },
-        { url: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png', label: '游乐场' },
-      ],
-      swiperOption: {
-
-      }
+      swiperOption: {}
     }
   },
+  props: [ 'iconList' ],
   computed: {
     pages () {
       const pages = []
-      this.icons.forEach((icon, index) => {
+      this.iconList.forEach((icon, index) => {
         let page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
