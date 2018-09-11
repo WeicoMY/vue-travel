@@ -2,7 +2,11 @@
   <div class="header">
     <div class="header-left"><span class="iconfont icon-back"></span></div>
     <div class="header-input"><span class="iconfont icon-search"></span>输入城市/景点/游玩主题</div>
-    <div class="header-right"><span class="iconfont icon-morecity">{{city}}</span></div>
+    <router-link class="router-link" to="/city">
+      <div class="header-right">
+        <span class="iconfont icon-morecity">{{city}}</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -25,11 +29,13 @@ export default {
   .header-left
     width rem2(64)
     text-align center
-  .header-right
-    width rem2(124)
-    text-align center
-    ::after
-      vertical-align -1px
+  .router-link
+    color #fff
+    .header-right
+      width rem2(124)
+      text-align center
+      ::after
+        vertical-align -1px
   .header-input
     flex 1
     height rem2(64)
