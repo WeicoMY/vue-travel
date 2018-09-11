@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  name: 'HomeRecommend',
   data () {
     return {
       recommendation: [
