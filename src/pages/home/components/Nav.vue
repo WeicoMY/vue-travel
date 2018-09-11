@@ -1,6 +1,6 @@
 <template>
   <div class="home-nav">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="home-nav-icon" v-for="icon of page" :key="icon.url">
           <div class="icon-box">
@@ -28,7 +28,10 @@ export default {
         { url: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png', label: '一日游' },
         { url: 'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png', label: '玩转长隆' },
         { url: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png', label: '游乐场' },
-      ]
+      ],
+      swiperOption: {
+
+      }
     }
   },
   computed: {
@@ -53,6 +56,7 @@ export default {
   overflow hidden
   height 0
   padding-bottom 50%
+  background #fff
   .home-nav-icon
     width 25%
     height 0
@@ -74,5 +78,4 @@ export default {
       right 0
       bottom rem2(20)
       ellipsis()
-
 </style>
