@@ -1,9 +1,9 @@
 <template>
   <div class="city-scroll">
     <ul
-      @touchstart="handleTouchStart"
-      @touchmove="handleTouchMove"
-      @touchend="handleTouchEnd"
+      @touchstart.stop="handleTouchStart"
+      @touchmove.stop="handleTouchMove"
+      @touchend.stop="handleTouchEnd"
     >
       <li
         v-for="(citiesAlph, alph) of cities"
