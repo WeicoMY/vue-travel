@@ -32,29 +32,35 @@ export default {
       keyword: '',
       result: [],
       notFound: false,
-      showContent: false
+      showContent: false,
+      timer: null
     }
   },
   watch: {
     keyword (newValue) {
-      const keyword = newValue.trim()
-      this.result = []
-      this.notFound = false
-      if (keyword === '') {
-        this.showContent = false
-        return
-      }
-      this.showContent = true
-      for (let item in this.cities) {
-        this.cities[item].forEach((city) => {
-          if (city.spell.includes(keyword) || city.name.includes(keyword)) {
-            this.result.push(city)
-          }
-        })
-      }
-      if (this.result.length === 0) {
-        this.notFound = true
-      }
+     if (this.timer) {
+       clearTimeout(this.timer)
+     }
+     this.timer = setTimeout(() => {
+        const keyword = newValue.trim()
+        this.result = []
+        this.notFound = false
+        if (keyword === '') {
+          this.showContent = false
+          return
+        }
+        this.showContent = true
+        for (let item in this.cities) {
+          this.cities[item].forEach((city) => {
+            if (city.spell.includes(keyword) || city.name.includes(keyword)) {
+              this.result.push(city)
+            }
+          })
+        }
+        if (this.result.length === 0) {
+          this.notFound = true
+        }
+     }, 100)
     }
   }
 }
