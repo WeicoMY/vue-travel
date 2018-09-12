@@ -1,12 +1,62 @@
 <template>
   <div class="city-search">
-    <input type="search" class="search-input" placeholder="请输入城市名或拼音">
+    <input
+      type="search"
+      class="search-input"
+      placeholder="请输入城市名或拼音"
+      v-model="keyword"
+    >
+    <div class="search-content" v-show="showContent">
+      <ul class="search-content-list">
+        <li
+          class="search-content-item border-bottom"
+          v-for="city of result"
+          :key="city.id"
+        >
+          {{city.name}}
+        </li>
+        <li class="search-content-item" v-show="notFound">抱歉，找不到该城市</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "CitySearch",
+  props: {
+    cities: Object
+  },
+  data () {
+    return {
+      keyword: '',
+      result: [],
+      notFound: false,
+      showContent: false
+    }
+  },
+  watch: {
+    keyword (newValue) {
+      const keyword = newValue.trim()
+      this.result = []
+      this.notFound = false
+      if (keyword === '') {
+        this.showContent = false
+        return
+      }
+      this.showContent = true
+      for (let item in this.cities) {
+        this.cities[item].forEach((city) => {
+          if (city.spell.includes(keyword) || city.name.includes(keyword)) {
+            this.result.push(city)
+          }
+        })
+      }
+      if (this.result.length === 0) {
+        this.notFound = true
+      }
+    }
+  }
 }
 </script>
 
@@ -23,6 +73,17 @@ export default {
     border-radius rem2(5)
     text-align center
     color #666
-
+  .search-content
+    position absolute
+    top rem2(158)
+    left 0
+    right 0
+    bottom 0
+    overflow hidden
+    background #fff
+    z-index 1
+    .search-content-item
+      line-height rem2(90)
+      padding-left rem2(10)
 </style>
 
