@@ -2,8 +2,8 @@
   <div class="city">
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :hotCities="hotCities" :cities="cities"></city-list>
-    <city-scroll :cities="cities"></city-scroll>
+    <city-list :hotCities="hotCities" :cities="cities" :letter="letter"></city-list>
+    <city-scroll :cities="cities" @scrollToHere="getLetter"></city-scroll>
   </div>
 </template>
 
@@ -23,18 +23,21 @@ export default {
   data () {
     return {
       hotCities: [],
-      cities: {}
+      cities: {},
+      letter: ''
     }
   },
   methods: {
     getInfo () {
       axios.get('/api/city.json')
         .then(res => {
-          console.log(res)
           if (!res.data.ret || !res.data.data) return
           this.hotCities = res.data.data.hotCities || []
           this.cities = res.data.data.cities || {}
         })
+    },
+    getLetter (e) {
+      this.letter = e || ''
     }
   },
   created () {

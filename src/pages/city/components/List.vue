@@ -20,10 +20,20 @@
           字母排序
         </h2>
         <ul class="list">
-          <li v-for="(citiesAlph, alph) in cities" :key="alph"><a href="#">{{alph}}</a></li>
+          <li
+            v-for="(citiesAlph, alph) in cities"
+            :key="alph"
+            @click="scrollTo(alph)"
+          >
+            <a href="#" @click.prevent>{{alph}}</a>
+          </li>
         </ul>
       </div>
-      <div class="city-alph" v-for="(citiesAlph, alph) of cities" :key="alph">
+      <div class="city-alph"
+        v-for="(citiesAlph, alph) of cities"
+        :key="alph"
+        :ref="alph"
+      >
         <h2 class="list-title">
           {{alph}}
         </h2>
@@ -39,9 +49,28 @@
 import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
+  data () {
+    return {
+      showLetter: this.letter
+    }
+  },
   props: {
     hotCities: Array,
-    cities: Object
+    cities: Object,
+    letter: String
+  },
+  watch: {
+    letter () {
+      this.showLetter = this.letter
+    },
+    showLetter (now) {
+      this.scroll.scrollToElement(this.$refs[now][0])
+    }
+  },
+  methods: {
+    scrollTo (index) {
+      this.showLetter = index
+    }
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.scroll)
