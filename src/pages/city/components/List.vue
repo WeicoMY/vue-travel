@@ -38,7 +38,13 @@
           {{alph}}
         </h2>
         <ul class="list">
-          <li class="border-rightbottom" v-for="city of citiesAlph" :key="city.id"><a href="#">{{city.name}}</a></li>
+          <li
+            class="border-rightbottom"
+            v-for="city of citiesAlph"
+            :key="city.id"
+          >
+            <a href="#">{{city.name}}</a>
+          </li>
         </ul>
       </div>
   </div>
@@ -73,7 +79,9 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new BScroll(this.$refs.scroll)
+    this.scroll = new BScroll(this.$refs.scroll, {
+      click: true
+    })
   }
 }
 </script>
@@ -108,6 +116,11 @@ export default {
         display block
         color #333
         ellipsis()
+  .city-popular
+    width 100%
+    height 0
+    padding-bottom rem2(90)*4
+    overflow hidden
   .city-sort .list li
     width (100%/6)
 </style>

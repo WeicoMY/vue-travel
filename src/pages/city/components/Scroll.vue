@@ -51,7 +51,7 @@ export default {
       if (this.timer) return
       this.timer = setTimeout(() => {
         const index = Math.floor((e.touches[0].clientY - this.firstLiTop) / 20)
-        if (index >= 0 && index < this.alphabets.length && index !== this.index) {
+        if (index >= 0 && index < this.alphabets.length) {
           this.index = index
         }
         this.timer = null
