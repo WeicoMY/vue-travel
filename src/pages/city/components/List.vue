@@ -119,8 +119,7 @@ export default {
   .city-popular
     width 100%
     height 0
-    padding-bottom rem2(90)*4
-    overflow hidden
+    padding-bottom rem2(90)*4+rem2(72)
   .city-sort .list li
     width (100%/6)
 </style>

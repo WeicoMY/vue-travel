@@ -1,9 +1,9 @@
 <template>
   <div class="city-scroll">
     <ul
-      @touchstart.stop="handleTouchStart"
-      @touchmove.stop="handleTouchMove"
-      @touchend.stop="handleTouchEnd"
+      @touchstart.stop.prevent="handleTouchStart"
+      @touchmove.stop.prevent="handleTouchMove"
+      @touchend.stop.prevent="handleTouchEnd"
     >
       <li
         v-for="(citiesAlph, alph) of cities"
@@ -76,12 +76,14 @@ export default {
   bottom 0
   display flex
   align-items center
-  ul li
-    line-height rem2(40)
-    text-align center
-    a
-      display inline-block
-      height 100%
-      width 100%
-      color $bgColor
+  ul
+    width rem2(60)
+    li
+      line-height rem2(40)
+      text-align center
+      a
+        display inline-block
+        height 100%
+        width 100%
+        color $bgColor
 </style>
