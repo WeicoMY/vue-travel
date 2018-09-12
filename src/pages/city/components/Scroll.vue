@@ -1,19 +1,17 @@
 <template>
   <div class="city-scroll">
     <ul>
-      <li><a href="#">A</a></li>
-      <li><a href="#">A</a></li>
-      <li><a href="#">A</a></li>
-      <li><a href="#">A</a></li>
-      <li><a href="#">A</a></li>
-      <li><a href="#">A</a></li>
+      <li v-for="(citiesAlph, alph) of cities" :key="alph"><a href="#">{{alph}}</a></li>
     </ul>
   </div>    
 </template>
 
 <script>
 export default {
-  name: 'CityScroll'  
+  name: 'CityScroll',
+  props: {
+    cities: Object
+  }
 }
 </script>
 
@@ -23,12 +21,11 @@ export default {
   right 0
   top rem2(158)
   bottom 0
-  background #eee
   display flex
   align-items center
   ul li
     line-height rem2(40)
     text-align center
     a
-      color #666
+      color $bgColor
 </style>

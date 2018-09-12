@@ -6,18 +6,13 @@
           热门城市
         </h2>
         <ul class="list">
-          <li class="border-rightbottom"><a href="#">北京</a></li>
-          <li class="border-rightbottom"><a href="#">上海</a></li>
-          <li class="border-rightbottom"><a href="#">三亚</a></li>
-          <li class="border-rightbottom"><a href="#">香港</a></li>
-          <li class="border-rightbottom"><a href="#">杭州</a></li>
-          <li class="border-rightbottom"><a href="#">广州</a></li>
-          <li class="border-rightbottom"><a href="#">成都</a></li>
-          <li class="border-rightbottom"><a href="#">深圳</a></li>
-          <li class="border-rightbottom"><a href="#">苏州</a></li>
-          <li class="border-rightbottom"><a href="#">桂林</a></li>
-          <li class="border-rightbottom"><a href="#">西安</a></li>
-          <li class="border-rightbottom"><a href="#">厦门</a></li>
+          <li 
+            class="border-rightbottom"
+            v-for="city of hotCities"
+            :key="city.id"
+          >
+            <a href="#">{{city.name}}</a>
+          </li>
         </ul>
       </div>
       <div class="city-sort">
@@ -25,105 +20,15 @@
           字母排序
         </h2>
         <ul class="list">
-          <li><a href="#">A</a></li>
-          <li><a href="#">B</a></li>
-          <li><a href="#">C</a></li>
-          <li><a href="#">D</a></li>
-          <li><a href="#">E</a></li>
-          <li><a href="#">F</a></li>
-          <li><a href="#">G</a></li>
-          <li><a href="#">H</a></li>
-          <li><a href="#">J</a></li>
-          <li><a href="#">K</a></li>
-          <li><a href="#">L</a></li>
-          <li><a href="#">M</a></li>
-          <li><a href="#">O</a></li>
-          <li><a href="#">P</a></li>
-          <li><a href="#">Q</a></li>
-          <li><a href="#">R</a></li>
-          <li><a href="#">S</a></li>
-          <li><a href="#">T</a></li>
-          <li><a href="#">U</a></li>
-          <li><a href="#">W</a></li>
-          <li><a href="#">X</a></li>
-          <li><a href="#">Y</a></li>
-          <li><a href="#">Z</a></li>
+          <li v-for="(citiesAlph, alph) in cities" :key="alph"><a href="#">{{alph}}</a></li>
         </ul>
       </div>
-      <div class="city-A">
+      <div class="city-alph" v-for="(citiesAlph, alph) of cities" :key="alph">
         <h2 class="list-title">
-          A
+          {{alph}}
         </h2>
         <ul class="list">
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-          <li class="border-rightbottom"><a href="#">阿坝藏族羌族自治州</a></li>
-        </ul>
-      </div>
-      <div class="city-B">
-        <h2 class="list-title">
-          B
-        </h2>
-        <ul class="list">
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-          <li class="border-rightbottom"><a href="#">巴彦淖尔</a></li>
-        </ul>
-      </div>
-      <div class="city-C">
-        <h2 class="list-title">
-          C
-        </h2>
-        <ul class="list">
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-          <li class="border-rightbottom"><a href="#">沧州</a></li>
-        </ul>
-      </div>
-      <div class="city-D">
-        <h2 class="list-title">
-          D
-        </h2>
-        <ul class="list">
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
-          <li class="border-rightbottom"><a href="#">大理</a></li>
+          <li class="border-rightbottom" v-for="city of citiesAlph" :key="city.id"><a href="#">{{city.name}}</a></li>
         </ul>
       </div>
   </div>
@@ -134,6 +39,10 @@
 import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    hotCities: Array,
+    cities: Object
+  },
   mounted () {
     this.scroll = new BScroll(this.$refs.scroll)
   }
