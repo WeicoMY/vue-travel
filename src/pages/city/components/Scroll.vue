@@ -43,12 +43,12 @@ export default {
     propLetter (e) {
       this.$emit('scrollToHere', e.target.innerText)
     },
-    handleTouchStart (e) {
+    handleTouchStart () {
       this.touchStatus = true
     },
     handleTouchMove (e) {
       if (!this.touchStatus) return
-      if (this.timer) return
+      if (this.timer) clearTimeout(this.timer)
       this.timer = setTimeout(() => {
         const index = Math.floor((e.touches[0].clientY - this.firstLiTop) / 20)
         if (index >= 0 && index < this.alphabets.length) {
@@ -57,7 +57,7 @@ export default {
         this.timer = null
       }, 16);
     },
-    handleTouchEnd (e) {
+    handleTouchEnd () {
       this.touchStatus = false
     },
   },

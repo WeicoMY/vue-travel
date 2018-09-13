@@ -10,6 +10,7 @@
             class="border-rightbottom"
             v-for="city of hotCities"
             :key="city.id"
+            @click="handdleCityClick(city.name)"
           >
             <a href="#">{{city.name}}</a>
           </li>
@@ -42,6 +43,7 @@
             class="border-rightbottom"
             v-for="city of citiesAlph"
             :key="city.id"
+            @click="handdleCityClick(city.name)"
           >
             <a href="#">{{city.name}}</a>
           </li>
@@ -76,6 +78,10 @@ export default {
   methods: {
     scrollTo (index) {
       this.showLetter = index
+    },
+    handdleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   mounted () {

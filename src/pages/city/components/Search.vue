@@ -12,6 +12,7 @@
           class="search-content-item border-bottom"
           v-for="city of result"
           :key="city.id"
+          @click="handdleCityClick(city.name)"
         >
           {{city.name}}
         </li>
@@ -63,7 +64,13 @@ export default {
         }
      }, 100)
     }
-  },    
+  },
+  methods: {
+    handdleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
+    }
+  },
   mounted () {
       this.scroll = new Bscroll(this.$refs.wrapper)
   }
