@@ -36,7 +36,8 @@ export default {
   .router-link
     color $headerColor
     .header-right
-      width rem2(124)
+      min-width rem2(104)
+      padding 0 rem2(10)
       text-align center
   .header-input
     flex 1
