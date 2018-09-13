@@ -55,6 +55,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   data () {
@@ -80,9 +81,12 @@ export default {
       this.showLetter = index
     },
     handdleCityClick (city) {
-      this.$store.commit('changeCity', city)
+      this.toThisCity(city)
       this.$router.push('/')
-    }
+    },
+    ...mapMutations({
+      'toThisCity': 'changeCity'
+    })
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.scroll, {
