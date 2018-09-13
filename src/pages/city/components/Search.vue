@@ -6,7 +6,7 @@
       placeholder="请输入城市名或拼音"
       v-model="keyword"
     >
-    <div class="search-content" v-show="showContent">
+    <div class="search-content" v-show="showContent" ref="wrapper">
       <ul class="search-content-list">
         <li
           class="search-content-item border-bottom"
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
 export default {
   name: "CitySearch",
   props: {
@@ -62,6 +63,9 @@ export default {
         }
      }, 100)
     }
+  },    
+  mounted () {
+      this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>
