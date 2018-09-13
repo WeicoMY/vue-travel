@@ -61,24 +61,28 @@
       }
     ],
     "recommendList": [{
+        "id": "0001",
         "imgUrl": "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
         "title": "长隆野生动物世界",
         "commentNum": "77642",
         "price": "208",
         "location": "广州长隆野生动物世界"
       }, {
+        "id": "0002",
       	"imgUrl": "http://img1.qunarzz.com/sight/p0/1707/47/477416df92210439a3.img.jpg_200x200_b9e4ac2c.jpg",
       	"title": "长隆欢乐世界",
       	"commentNum": "39281",
       	"price": "173",
       	"location": "广州长隆欢乐世界"
       }, {
+        "id": "0003",
       	"imgUrl": "http://img1.qunarzz.com/sight/p0/1507/9e/7b5e0a44cb0310280b1aeb2a8dd94de8.water.jpg_200x200_3c429960.jpg",
       	"title": "长隆国际大马戏剧院",
       	"commentNum": "26832",
       	"price": "339",
       	"location": "广州长隆大马戏剧院"
       }, {
+        "id": "0004",
       	"imgUrl": "http://img1.qunarzz.com/sight/p0/1707/ab/abb70c851caaa6d8a3.img.jpg_200x200_b902dd9e.jpg",
       	"title": "长隆水上乐园",
       	"commentNum": "35349",

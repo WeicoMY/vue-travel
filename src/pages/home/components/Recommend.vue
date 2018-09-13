@@ -4,7 +4,12 @@
       <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png">猜你喜欢
     </div>
     <div class="home-recommend-list">
-      <div class="item border-bottom" v-for="(item, index) of recommendList" :key="index + item.imgUrl">
+      <router-link tag="div" 
+        class="item border-bottom"
+        v-for="(item, index) of recommendList"
+        :key="index + item.imgUrl"
+        :to="'/detail/' + item.id"
+      >
         <div class="item-img">
           <img :src="item.imgUrl" alt="">
         </div>
@@ -23,7 +28,7 @@
             <span class="item-location">{{item.location}}</span>
           </p>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
