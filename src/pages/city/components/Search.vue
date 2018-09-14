@@ -77,6 +77,9 @@ export default {
       this.scroll = new Bscroll(this.$refs.wrapper, {
         click: true
       })
+  },
+  activated () {
+    this.keyword = ''
   }
 }
 </script>

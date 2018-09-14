@@ -41,7 +41,6 @@ export default {
   methods: {
     handleScroll () {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      console.log(scrollTop)
       if (scrollTop > 60) {
         this.showHeader = true
         const opacity = (scrollTop - 60) / (170 - 60)
