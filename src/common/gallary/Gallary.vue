@@ -50,6 +50,7 @@ export default {
   display flex
   align-items center
   background #333
+  z-index 99g
   .gallary-wrapper
     width 100%
     .swiper-container

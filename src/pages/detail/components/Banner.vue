@@ -13,7 +13,7 @@
         alt=""
       >
       <div class="banner-info">
-        <div class="info-img"><span class="iconfont icon-picture"></span><span>102</span></div>
+        <div class="info-img"><span class="iconfont icon-picture"></span><span>{{images.length}}</span></div>
         <h2 class="info-title">长隆野生动物世界(AAAAA景区)</h2>
       </div>
     </div>
