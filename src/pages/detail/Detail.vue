@@ -59,6 +59,10 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+      // window.pageYOffset = 0
+      // document.body.scrollTop = 0
+      // document.documentElement.scrollTop = 0
+    window.scrollTo(0, 0)
   },
   deactivated () {
     window.removeEventListener('scroll', this.handleScroll)

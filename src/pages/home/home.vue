@@ -58,6 +58,7 @@ export default {
       this.lastCity = this.city
       this.getHomeInfo()
     }
+    window.scrollTo(0, 0)
   }
   
 }
