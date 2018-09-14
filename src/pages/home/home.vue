@@ -50,12 +50,10 @@ export default {
     }
   },
   created () {
-    console.log('created')
     this.lastCity = this.city
     this.getHomeInfo()
   },
   activated () {
-    console.log('activated')
     if (this.lastCity !== this.city) {
       this.lastCity = this.city
       this.getHomeInfo()

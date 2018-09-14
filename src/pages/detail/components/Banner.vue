@@ -1,20 +1,51 @@
 <template>
-  <div class="detail-banner">
-    <div class="detail-back"><span class="iconfont icon-back"></span></div>
-    <img class="banner-img"
-      src="http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_600x330_b5e86902.jpg"
-      alt=""
-    >
-    <div class="banner-info">
-      <div class="info-img"><span class="iconfont icon-picture"></span><span>102</span></div>
-      <h2 class="info-title">长隆野生动物世界(AAAAA景区)</h2>
+  <div class="detail-banner" @click="handleBannerClick">
+    <div>
+      <div class="detail-back"><span class="iconfont icon-back"></span></div>
+      <img class="banner-img"
+        src="http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_600x330_b5e86902.jpg"
+        alt=""
+      >
+      <div class="banner-info">
+        <div class="info-img"><span class="iconfont icon-picture"></span><span>102</span></div>
+        <h2 class="info-title">长隆野生动物世界(AAAAA景区)</h2>
+      </div>
     </div>
+    <banner-gallary
+      :images="images"
+      v-if="showGallary"
+      @closeGallary="handleCloseGallary"
+    ></banner-gallary>
   </div>
 </template>
 
 <script>
+import BannerGallary from '@/common/gallary/Gallary'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  data () {
+    return {
+      images: [
+        'http://img1.qunarzz.com/sight/p0/1507/6a/f77ff30899f84b98e0e74b2918326946.water.jpg_r_800x800_e60f44ef.jpg',
+        'http://img1.qunarzz.com/sight/p0/1507/a7/a74ccfbd5b3071eff6b23854e23613f9.water.jpg_r_800x800_4150aec7.jpg',
+        'http://img1.qunarzz.com/sight/p0/1508/88/f7ea2660ad98bee23c052ef05d51dd0e.water.jpg_r_800x800_c13fc929.jpg',
+        'http://img1.qunarzz.com/sight/p0/1507/ce/bf45524d91b584fd16ae32ed98d83c89.water.jpg_r_800x800_3f0bcc3e.jpg'
+      ],
+      showGallary: false,
+      test: 0
+    }
+  },
+  components: {
+    BannerGallary
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallary = true
+    },
+    handleCloseGallary () {
+      this.showGallary = false
+    }
+  }
 }
 </script>
 
@@ -47,7 +78,7 @@ export default {
     right 0
     color #fff
     padding rem2(30) rem2(20)
-    background linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7))
+    background linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7))
     .info-img
       display inline-block
       height rem2(40)
