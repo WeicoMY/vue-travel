@@ -9,16 +9,16 @@
         <span class="iconfont icon-back"></span>
       </div>
       <img class="banner-img"
-        src="http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_600x330_b5e86902.jpg"
+        :src="imgBanner"
         alt=""
       >
       <div class="banner-info">
-        <div class="info-img"><span class="iconfont icon-picture"></span><span>{{images.length}}</span></div>
-        <h2 class="info-title">长隆野生动物世界(AAAAA景区)</h2>
+        <div class="info-img"><span class="iconfont icon-picture"></span><span>{{imgGallary.length}}</span></div>
+        <h2 class="info-title">{{titleBanner}}</h2>
       </div>
     </div>
     <banner-gallary
-      :images="images"
+      :images="imgGallary"
       v-if="showGallary"
       @closeGallary="handleCloseGallary"
     ></banner-gallary>
@@ -31,14 +31,13 @@ export default {
   name: 'DetailBanner',
   data () {
     return {
-      images: [
-        'http://img1.qunarzz.com/sight/p0/1507/6a/f77ff30899f84b98e0e74b2918326946.water.jpg_r_800x800_e60f44ef.jpg',
-        'http://img1.qunarzz.com/sight/p0/1507/a7/a74ccfbd5b3071eff6b23854e23613f9.water.jpg_r_800x800_4150aec7.jpg',
-        'http://img1.qunarzz.com/sight/p0/1508/88/f7ea2660ad98bee23c052ef05d51dd0e.water.jpg_r_800x800_c13fc929.jpg',
-        'http://img1.qunarzz.com/sight/p0/1507/ce/bf45524d91b584fd16ae32ed98d83c89.water.jpg_r_800x800_3f0bcc3e.jpg'
-      ],
       showGallary: false
     }
+  },
+  props: {
+    titleBanner: String,
+    imgBanner: String,
+    imgGallary: Array
   },
   components: {
     BannerGallary

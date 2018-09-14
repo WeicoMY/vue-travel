@@ -1,25 +1,48 @@
 {
   "ret": true,
   "data": {
-    "sightName": "大连圣亚海洋世界(AAAA景区)",
-    "bannerImg": "http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg",
-    "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg", "http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_800x800_9ef05ee7.png"],
+    "sightName": "长隆野生动物世界(AAAAA景区)",
+    "bannerImg": "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_600x330_b5e86902.jpg",
+    "gallaryImgs": [
+        "http://img1.qunarzz.com/sight/p0/1507/6a/f77ff30899f84b98e0e74b2918326946.water.jpg_r_800x800_e60f44ef.jpg",
+        "http://img1.qunarzz.com/sight/p0/1507/a7/a74ccfbd5b3071eff6b23854e23613f9.water.jpg_r_800x800_4150aec7.jpg",
+        "http://img1.qunarzz.com/sight/p0/1508/88/f7ea2660ad98bee23c052ef05d51dd0e.water.jpg_r_800x800_c13fc929.jpg",
+        "http://img1.qunarzz.com/sight/p0/1507/ce/bf45524d91b584fd16ae32ed98d83c89.water.jpg_r_800x800_3f0bcc3e.jpg"
+    ],
     "categoryList": [{
-        "title": "成人票",
+        "title": "单票",
         "children": [{
-          "title": "成人三馆联票",
-          "children": [{
-            "title": "成人三馆联票 - 某一连锁店销售"
-          }]
-        },{
-          "title": "成人五馆联票"
-        }]
-      }, {
-        "title": "学生票"
-      }, {
-        "title": "儿童票"
-      }, {
-        "title": "特惠票"
-      }]
+            "title": "成人票"
+          },
+          {
+            "title": "儿童票"
+          },
+          {
+            "title": "学生票"
+          },
+          {
+            "title": "家庭票"
+          }
+        ]
+      },
+      {
+        "title": "特殊人群票"
+      },
+      {
+        "title": "动物世界+大马戏"
+      },
+      {
+        "title": "动物世界+水上乐园"
+      },
+      {
+        "title": "动物世界+水上乐园"
+      },
+      {
+        "title": "两园两日套票"
+      },
+      {
+        "title": "三园三日套票"
+      }
+    ]
   }
 }
