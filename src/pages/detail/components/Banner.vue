@@ -1,7 +1,13 @@
 <template>
   <div class="detail-banner" @click="handleBannerClick">
     <div>
-      <div class="detail-back"><span class="iconfont icon-back"></span></div>
+      <div
+        tag="div"
+        class="detail-back"
+        @click.stop="handleBackClick"
+      >
+        <span class="iconfont icon-back"></span>
+      </div>
       <img class="banner-img"
         src="http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_600x330_b5e86902.jpg"
         alt=""
@@ -31,8 +37,7 @@ export default {
         'http://img1.qunarzz.com/sight/p0/1508/88/f7ea2660ad98bee23c052ef05d51dd0e.water.jpg_r_800x800_c13fc929.jpg',
         'http://img1.qunarzz.com/sight/p0/1507/ce/bf45524d91b584fd16ae32ed98d83c89.water.jpg_r_800x800_3f0bcc3e.jpg'
       ],
-      showGallary: false,
-      test: 0
+      showGallary: false
     }
   },
   components: {
@@ -44,6 +49,9 @@ export default {
     },
     handleCloseGallary () {
       this.showGallary = false
+    },
+    handleBackClick () {
+      this.$router.push('/')
     }
   }
 }
