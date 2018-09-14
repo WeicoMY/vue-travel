@@ -17,16 +17,20 @@
         <h2 class="info-title">{{titleBanner}}</h2>
       </div>
     </div>
-    <banner-gallary
-      :images="imgGallary"
-      v-if="showGallary"
-      @closeGallary="handleCloseGallary"
-    ></banner-gallary>
+    <fade-transition>
+      <banner-gallary
+        :images="imgGallary"
+        v-if="showGallary"
+        @closeGallary="handleCloseGallary"
+      ></banner-gallary>
+    </fade-transition>
   </div>
 </template>
 
 <script>
 import BannerGallary from '@/common/gallary/Gallary'
+import FadeTransition from '@/common/fade/FadeTransition'
+
 export default {
   name: 'DetailBanner',
   data () {
@@ -40,7 +44,8 @@ export default {
     imgGallary: Array
   },
   components: {
-    BannerGallary
+    BannerGallary,
+    FadeTransition
   },
   methods: {
     handleBannerClick () {

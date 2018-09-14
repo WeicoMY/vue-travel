@@ -16,9 +16,11 @@
 
 <script>
 import axios from 'axios'
+
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+
 export default {
   name: 'Detail',
   components: {
