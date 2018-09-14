@@ -22,6 +22,7 @@ export default {
   font-size: $headerSize
   color #fff
   background $bgColor
+  z-index 2
   .header-back
     position absolute
     left 0
